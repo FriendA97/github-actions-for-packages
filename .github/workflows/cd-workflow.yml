@@ -64,5 +64,5 @@ jobs:
         username: ${{github.actor}}
         password: ${{secrets.GITHUB_TOKEN}}
         registry: docker.pkg.github.com
-        repository: FriendA97/github-actions-for-packages/tic-tac-toe
+        repository: FriendA97/github-actions-for-packages
         tag_with_sha: true
