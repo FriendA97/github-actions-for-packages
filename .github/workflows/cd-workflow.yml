@@ -58,11 +58,17 @@ jobs:
       with:
         name: webpack artifacts
         path: public
+    - name: Docker meta
+      id: meta
+      uses: docker/metadata-action@v3
+      with:
+        images: ghcr.io/${{ github.repository }}
+        tags: latest
     - name: Build container image
       uses: docker/build-push-action@v2
       with:
         username: ${{github.actor}}
         password: ${{secrets.GITHUB_TOKEN}}
         registry: docker.pkg.github.com
-        repository: FriendA97/github-actions-for-packages
+        repository: FriendA97/github-actions-for-packages/tic-tac-toe
         tag_with_sha: true
